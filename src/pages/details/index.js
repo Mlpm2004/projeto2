@@ -1,7 +1,8 @@
 import React from "react";
-function Details(){
+function Details({id}){
+    console.log(id)
     return (
-        <div>Details</div>
+        <div>id</div>
     )
 }
 export default Details

@@ -1,0 +1,50 @@
+.menu{
+    background-color: rgb(19, 19, 66);
+    color:burlywood;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    margin-bottom: 10px;
+}
+.container{
+    margin: 0 auto;
+    padding: 10px;
+    width: 70%;
+    border:2px solid;
+    border-radius: 1rem;
+}
+.container-home{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.imagem{
+    width: 150px;
+
+}
+.item-livro{
+    margin:10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap:10px;
+    justify-content: center;
+    border: 1px solid;
+    border-radius: 0rem 0rem 1rem 1rem;
+    background-color: floralwhite;
+
+}
+.item-livro-name{
+    display: flex;
+    justify-content: center;
+}
+.botao{
+    background-color: rgb(19, 19, 66);
+    border:1px;
+    border-radius: 1rem;
+    color:floralwhite;
+    font-size: 10px;
+    font-weight: bold;
+
+}
