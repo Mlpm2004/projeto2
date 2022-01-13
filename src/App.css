@@ -44,7 +44,43 @@
     border:1px;
     border-radius: 1rem;
     color:floralwhite;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: bold;
 
 }
+.botao-cart{
+    background-color: rgb(19, 19, 66);
+    height: 50px;
+    border:1px;
+    border-radius: 0.5rem;
+    color:floralwhite;
+    font-size: 24px;
+    font-weight: bold;
+
+}
+.desc-livro{
+    display: flex;
+}
+.container-foto{
+    padding: 20px;
+}
+.container-desc{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.titulo-desc{
+    font-size: 36px;
+    font-weight: bold;
+    color:rgb(19, 19, 66);
+    justify-content: left;
+}
+.preco-desc{
+    font-size: 36px;
+    font-weight: bold;
+    justify-content: left;
+}
+.paragrafo{
+    text-align: justify;
+}
+

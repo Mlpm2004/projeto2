@@ -14,17 +14,14 @@ function Home(){
         }
         handleGetLivro();
     },[])
-    function handleClick(indice) {
-        console.log(indice)
-    }
     const dados = livros.map((livro)=>(
-      <div className="item-livro">
-        <img className="imagem " src={livro.image} alt="Foto do Livro"></img>     
-        <span className="item-livro-name"><b>{livro.title}</b></span>
-       <span className="item-livro-name">{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(livro.price)}</span>
-        <div className="item-livro-name"><button className="botao" >Comprar</button></div>
-        <div className="item-livro-name"><button className="botao" onClick={() => handleClick(livro.id)}>Detalhes</button></div>
-    </div>
+        <div className="item-livro" key={livro.id}>
+            <img className="imagem " src={livro.image} alt="Foto do Livro"></img>     
+            <span className="item-livro-name"><b>{livro.title}</b></span>
+            <span className="item-livro-name">{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(livro.price)}</span>
+            <div className="item-livro-name"><button className="botao" >Comprar</button></div>
+            <div className="item-livro-name"><Link className="" to={`/details/${livro.id}`}><button className="botao" >Detalhes</button></Link></div>
+        </div>
     ))
   return (
     <div className="container">
