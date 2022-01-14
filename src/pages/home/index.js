@@ -1,8 +1,11 @@
 import React from "react";
-import { useEffect,useState } from 'react';
-import {Link} from 'react-router-dom';
+import { useEffect,useState, useContext } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import Details from "../details";
+import { CartContext } from '../../context/cart';
 function Home(){
+    const { addItem } = useContext(CartContext)
+    const params = useParams();
     const url='http://localhost:3333/books';
     const [livros,setLivros]=useState([]);
     const [detalhes,setDetalhes]=useState([]);
@@ -12,14 +15,14 @@ function Home(){
             const data = await response.json();
             setLivros(data);
         }
-        handleGetLivro();
-    },[])
+        handleGetLivro(params.id);
+    },[params.id])
     const dados = livros.map((livro)=>(
         <div className="item-livro" key={livro.id}>
             <img className="imagem " src={livro.image} alt="Foto do Livro"></img>     
             <span className="item-livro-name"><b>{livro.title}</b></span>
             <span className="item-livro-name">{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(livro.price)}</span>
-            <div className="item-livro-name"><button className="botao" >Comprar</button></div>
+            <div className="item-livro-name"><button className="botao"  onClick={() => {addItem(livro)}}>Comprar</button></div>
             <div className="item-livro-name"><Link className="" to={`/details/${livro.id}`}><button className="botao" >Detalhes</button></Link></div>
         </div>
     ))
