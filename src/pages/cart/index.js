@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/cart';
 function Cart(){
+    const { remItem } = useContext(CartContext)
     const { cart } = useContext(CartContext)
     let total=0
     if (cart.length==1){
@@ -51,7 +52,7 @@ function Cart(){
               }
                 </td>
                 <td>
-                    <button >Remover</button>
+                    <button className="botao"  onClick={() => {remItem(item.id,item.title)}}>Remover</button>
                 </td>
            </tr>
           )}

@@ -6,7 +6,7 @@ function Menu(){
     return (
         <nav>
             <div className="menu">
-                {cart.length} Produtos no carrinho
+                <Link className="remlink" to={`/cart`}>{cart.length} Produtos no carrinho</Link>
                 <h1>Dev Book Store</h1>
                 <ul className='menu-list'>
                     <li><Link to="/" className='menu-list-item'>Home</Link></li>
