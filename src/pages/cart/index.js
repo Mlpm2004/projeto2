@@ -1,11 +1,17 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/cart';
+import Botao from '../../style/botao/botao';
+import Container from '../../style/container';
+import Total from '../../style/total';
+import TableCart from '../../style/table-cart';
+import TableImg from '../../style/table-image';
+import BotaoDesc from "../../style/botao-cart";
 function Cart(){
     const { remItem } = useContext(CartContext)
+    const { esvaziaCart } = useContext(CartContext)
     const { cart } = useContext(CartContext)
     let total=0
-    if (cart.length==1){
+    if (cart.length===1){
         total = cart[0].price  
     }else if(cart.length>=2){
     total = cart.reduce((acumulado, valor) => {
@@ -18,15 +24,15 @@ function Cart(){
     }
 
     return (
-        <div className='container'>
-            <div className='total'>
+        <Container>
+            <Total>
                 <h1 >Total : {new Intl.NumberFormat(
                     'pt-BR',
                     { style: 'currency', currency: 'BRL' }
                     ).format(total)}
                 </h1>
-            </div>
-            <table className='table-cart'>
+            </Total>
+            <TableCart>
                 <thead>
                     <th>#</th>
                     <th>Produtos</th>
@@ -37,11 +43,11 @@ function Cart(){
            {cart.map(item =>
             <tr>
               <td>
-                <img
+                <TableImg
                   src={item.image}
                   alt="Foto do livro"
                   className="table-image"
-                />
+                ></TableImg>
               </td>
               <td>{item.title}</td>
               <td>{
@@ -52,13 +58,14 @@ function Cart(){
               }
                 </td>
                 <td>
-                    <button className="botao"  onClick={() => {remItem(item.id,item.title)}}>Remover</button>
+                    <Botao  onClick={() => {remItem(item.id,item.title)}}>Remover</Botao>
                 </td>
            </tr>
           )}
                 </tbody>
-            </table>
-        </div>
+            </TableCart>
+        <BotaoDesc onClick={() => {esvaziaCart()}}>Esvaziar Carrinho</BotaoDesc>
+        </Container>
     );
 }
 export default Cart

@@ -1,12 +1,12 @@
-.menu{
+/* .menu{
     background-color: rgb(19, 19, 66);
     color:burlywood;
     display: flex;
     align-items: center;
     justify-content:space-around;
     margin-bottom: 10px;
-}
-.container{
+} */
+/* .container{
     margin: 0 auto;
     padding: 10px;
     width: 70%;
@@ -38,7 +38,8 @@
 .item-livro-name{
     display: flex;
     justify-content: center;
-}
+} */
+/*
 .botao{
     background-color: rgb(19, 19, 66);
     border:1px;
@@ -48,7 +49,8 @@
     font-weight: bold;
 
 }
-.botao-cart{
+*/
+/* .botao-cart{
     background-color: rgb(19, 19, 66);
     height: 50px;
     border:1px;
@@ -68,60 +70,49 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-}
-.titulo-desc{
+} */
+/* .titulo-desc{
     font-size: 36px;
     font-weight: bold;
     color:rgb(19, 19, 66);
     justify-content: left;
 }
-.preco-desc{
-    font-size: 36px;
-    font-weight: bold;
-    justify-content: left;
-}
+
 .paragrafo{
     text-align: justify;
-}
-.table-cart {
+} */
+/* .table-cart {
   width: 100%;
   background: #FFF;
   padding: 10px;
   border-radius: 10px;
   margin: 10px 0;
+} */
+
+tr{
+    border-bottom:1pt solid black;
 }
 
-.table-cart thead, th {
-  color: #999;
-  text-align: left;
-  padding: 12px;
-}
-
-.table-cart tbody, th {
-  padding: 12px;
-  border-bottom: 1px solid #eee;
-}
-
-.table-image {
+/* .table-image {
   height: 100px;
-}
-.menu-list {
+} */
+/* .menu-list {
   display: flex;
   gap: 10px;
   list-style: none;
-}
+} */
 
-.menu-list-item {
+/* .menu-list-item {
  color: #FFF;
  font-weight: bold;
  font-size: 16px;
  text-decoration: none; 
-}
-.total{
+} */ 
+/* .total{
     display: flex;
     justify-content:flex-end;
-}
-.remlink{
+} */
+/* .remlink{
 text-decoration: none; 
 color:#FFF;
-}
+} */

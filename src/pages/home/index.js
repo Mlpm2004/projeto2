@@ -1,14 +1,19 @@
 import React from "react";
 import { useEffect,useState, useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import Details from "../details";
+import Botao from '../../style/botao/botao'
 import { CartContext } from '../../context/cart';
+import Imagem from "../../style/imagem";
+import ContainerHome from "../../style/container-home";
+import Container from "../../style/container";
+import ItemLivro from "../../style/item-livro";
+import ItemLivroName from "../../style/item-livro-name";
 function Home(){
     const { addItem } = useContext(CartContext)
     const params = useParams();
     const url='http://localhost:3333/books';
     const [livros,setLivros]=useState([]);
-    const [detalhes,setDetalhes]=useState([]);
+   // const [detalhes,setDetalhes]=useState([]);
     useEffect(()=>{
         async function handleGetLivro(){
             const response = await fetch(url);
@@ -18,22 +23,22 @@ function Home(){
         handleGetLivro(params.id);
     },[params.id])
     const dados = livros.map((livro)=>(
-        <div className="item-livro" key={livro.id}>
-            <img className="imagem " src={livro.image} alt="Foto do Livro"></img>     
-            <span className="item-livro-name"><b>{livro.title}</b></span>
-            <span className="item-livro-name">{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(livro.price)}</span>
-            <div className="item-livro-name"><button className="botao"  onClick={() => {addItem(livro)}}>Comprar</button></div>
-            <div className="item-livro-name"><Link className="" to={`/details/${livro.id}`}><button className="botao" >Detalhes</button></Link></div>
-        </div>
+        <ItemLivro>
+            <Imagem src={livro.image} alt="Foto do Livro"></Imagem>     
+            <ItemLivroName><b>{livro.title}</b></ItemLivroName>
+            <ItemLivroName>{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(livro.price)}</ItemLivroName>
+            <ItemLivroName><Botao onClick={() => {addItem(livro)}}>Comprar</Botao></ItemLivroName>
+            <ItemLivroName><Link  to={`/details/${livro.id}`}><Botao>Detalhes</Botao></Link></ItemLivroName>
+        </ItemLivro>
     ))
   return (
-    <div className="container">
+    <Container>
         <h1>Total de Livros {livros.length}</h1>
         
-        <div className="container-home">
+        <ContainerHome>
             {dados}
-        </div>
-    </div>
+        </ContainerHome>
+    </Container>
   );
 }
 export default Home
