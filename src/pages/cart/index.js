@@ -1,11 +1,7 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../../context/cart';
-import Botao from '../../style/botao/botao';
-import Container from '../../style/container';
-import Total from '../../style/total';
-import TableCart from '../../style/table-cart';
-import TableImg from '../../style/table-image';
-import BotaoDesc from "../../style/botao-cart";
+import {Container,Botao} from "../../component/style";
+import {Total,TableCart,TableImg,BotaoDesc} from './style.js';
 function Cart(){
     const { remItem } = useContext(CartContext)
     const { esvaziaCart } = useContext(CartContext)

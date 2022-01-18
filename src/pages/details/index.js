@@ -3,14 +3,8 @@ import {useParams} from 'react-router-dom';
 import {useEffect,useState,useContext} from 'react';
 import {Link} from 'react-router-dom';
 import { CartContext } from "../../context/cart";
-import Container from "../../style/container";
-import ItemLivroName from "../../style/item-livro-name";
-import Paragrafo from "../../style/paragrafo";
-import TituloDescricao from "../../style/titulo-desc";
-import ContainerFoto from "../../style/container-foto";
-import DescLivro from "../../style/desc-livro";
-import ContainerDesc from "../../style/container-desc";
-import BotaoDesc from "../../style/botao-cart";
+import {ItemLivroName,Container} from "../../component/style";
+import {Paragrafo,TituloDescricao,ContainerFoto,DescLivro,ContainerDesc,BotaoDesc} from "./style";
 function Details(){
     const params = useParams();
     const { addItem } = useContext(CartContext)

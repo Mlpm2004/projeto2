@@ -1,13 +1,9 @@
 import React from "react";
 import { useEffect,useState, useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import Botao from '../../style/botao/botao'
 import { CartContext } from '../../context/cart';
-import Imagem from "../../style/imagem";
-import ContainerHome from "../../style/container-home";
-import Container from "../../style/container";
-import ItemLivro from "../../style/item-livro";
-import ItemLivroName from "../../style/item-livro-name";
+import {Imagem,ContainerHome,ItemLivro} from "./style";
+import {ItemLivroName,Container,Botao} from "../../component/style";
 function Home(){
     const { addItem } = useContext(CartContext)
     const params = useParams();

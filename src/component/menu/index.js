@@ -1,10 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/cart';
-import Menutopo from '../../style/menu/menu'
-import MenuList from '../../style/menu-list'
-import MenuListItem from '../../style/menu-list-item';
-import RemLink from '../../style/remLink';
+import {Menutopo,MenuList,MenuListItem,RemLink} from './style';
 function Menu(){
     const {cart} = useContext(CartContext)
     return (
